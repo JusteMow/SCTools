@@ -2,6 +2,10 @@
 
 ## 2025-11-03 - Migration vers package Git partagé
 
+### 🛠️ Scripts batch Git
+- **git_push.bat** : Push automatique SCTools + submodule tkshared
+- **git_pull.bat** : Pull et mise à jour du submodule tkshared
+
 ### 🎯 Migration tkshared (submodule Git)
 - **Création repo GitHub** `TkinterSharedUI` (https://github.com/JusteMow/tk_shared)
   - Package renommé : `shared_tkinter_utils` → `tkshared`
