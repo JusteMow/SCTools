@@ -11,7 +11,7 @@ from pages.rename_levels_pages import RenameLevelsPage
 from pages.show_info_page import ShowInfosPage
 import states.states as states
 import utils.log_file as log
-from _shared.shared_tkinter_utils.general.notice_label import NoticeLabel
+from tkshared.general import NoticeLabel
 
 
 class MainApp(tk.Tk):

@@ -3,7 +3,7 @@ import states.states as states
 import utils.clone_tools as clone_tools
 import utils.xml_tools as XT
 from tkinter import messagebox
-from _shared.shared_tkinter_utils.general.screen_name_filter import ScreenNameFilter
+from tkshared.general import ScreenNameFilter
 import utils.gamebox_tools as GB
 from lxml import etree
 import utils.log_file as log

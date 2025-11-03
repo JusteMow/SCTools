@@ -1,10 +1,10 @@
 import os
 import tkinter as tk
 from tkinter import messagebox
-from _shared.shared_tkinter_utils.listbox.listbox_with_search_and_preview import ListboxWithSearchAndPreview
+from tkshared.listbox import ListboxWithSearchAndPreview
 from pages.base_page import BasePage
 import states.states as states
-from _shared.shared_tkinter_utils.general.entry_plus import EntryPlus
+from tkshared.general import EntryPlus
 import utils.clone_tools as clone_tools
 import utils.general_tools as GT
 

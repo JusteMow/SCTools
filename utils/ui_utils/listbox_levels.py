@@ -2,7 +2,7 @@ import tkinter as tk
 import os
 import utils.xml_tools as XT
 import states.states as states
-from _shared.shared_tkinter_utils.listbox.listbox_with_search import ListboxWithSearch
+from tkshared.listbox import ListboxWithSearch
 
 
 class ListboxLevels(ListboxWithSearch):

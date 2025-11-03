@@ -4,7 +4,7 @@ from tkinter import messagebox
 import states.states as states
 from pages.base_page import BasePage
 import utils.asset_renamer_tools as asset_renamer_tools
-from _shared.shared_tkinter_utils.general.entry_plus import EntryPlus
+from tkshared.general import EntryPlus
 import utils.general_tools as GT
 from utils.ui_utils.listbox_all_assets import ListboxAllAssets
 import utils.log_file as log

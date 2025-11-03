@@ -1,6 +1,6 @@
 import tkinter as tk
 import os
-from _shared.shared_tkinter_utils.listbox.listbox_with_search_and_preview import ListboxWithSearchAndPreview
+from tkshared.listbox import ListboxWithSearchAndPreview
 import utils.general_tools as GT
 import states.states as states
 

@@ -2,12 +2,12 @@ import os
 import tkinter as tk
 from tkinter import messagebox
 from utils.ui_utils.listbox_levels import ListboxLevels
-from _shared.shared_tkinter_utils.listbox.listbox_with_search_and_preview import ListboxWithSearchAndPreview
-from _shared.shared_tkinter_utils.general.screen_name_filter import ScreenNameFilter
+from tkshared.listbox import ListboxWithSearchAndPreview
+from tkshared.general import ScreenNameFilter
 from pages.base_page import BasePage
 import states.states as states
 import utils.xml_tools as XT
-from _shared.shared_tkinter_utils.general.entry_plus import EntryPlus
+from tkshared.general import EntryPlus
 import utils.general_tools as GT
 import utils.gamebox_tools as GB
 import utils.log_file as log

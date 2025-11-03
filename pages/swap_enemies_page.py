@@ -3,11 +3,11 @@ import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk  # Pour charger et afficher les images
 from utils.ui_utils.listbox_levels import ListboxLevels
-from _shared.shared_tkinter_utils.listbox.listbox_with_search_and_preview import ListboxWithSearchAndPreview
+from tkshared.listbox import ListboxWithSearchAndPreview
 import states.states as states
 import utils.xml_tools as XT
 from pages.base_page import BasePage
-from _shared.shared_tkinter_utils.general.screen_name_filter import ScreenNameFilter
+from tkshared.general import ScreenNameFilter
 import utils.levels_tools as levels_tools
 import utils.general_tools as GT
 # NoticeLabel is now in states.notice_label

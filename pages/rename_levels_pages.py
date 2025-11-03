@@ -4,7 +4,7 @@ from tkinter import messagebox
 from utils.ui_utils.listbox_levels import ListboxLevels
 from pages.base_page import BasePage
 import states.states as states
-from _shared.shared_tkinter_utils.general.entry_plus import EntryPlus
+from tkshared.general import EntryPlus
 import utils.levels_tools as level_tools
 import utils.log_file as log
 import utils.general_tools as GT
