@@ -13,8 +13,8 @@ SCTools/
 ├── utils/                  # Outils de traitement XML, assets, levels
 │   └── ui_utils/          # Widgets UI spécifiques au projet
 ├── states/                 # Variables globales d'état
-├── _shared/               # 📦 Package réutilisable (nouveau)
-│   └── shared_tkinter_utils/
+├── _shared/               # 📦 Packages partagés
+│   └── tkshared/         # Git submodule (https://github.com/JusteMow/tk_shared)
 └── old/                   # Anciens fichiers (backup)
 ```
 
@@ -66,13 +66,25 @@ Widgets tkinter spécifiques au projet :
 
 ---
 
-## 📦 _shared/shared_tkinter_utils/ (NOUVEAU)
+## 📦 _shared/tkshared/ (Git Submodule)
 
-Package réutilisable extrait du projet. Voir `_shared/shared_tkinter_utils/README.md`
+Package réutilisable partagé entre projets. Voir https://github.com/JusteMow/tk_shared
 
 **Contenu** :
 - `general/` : EntryPlus, NoticeLabel, ScreenNameFilter
 - `listbox/` : ListboxWithSearch, ListboxWithSearchAndPreview
+
+**Installation** :
+```bash
+git submodule update --init --recursive
+pip install -e _shared/tkshared
+```
+
+**Usage** :
+```python
+from tkshared.general import EntryPlus, NoticeLabel
+from tkshared.listbox import ListboxWithSearch
+```
 
 ---
 
@@ -128,7 +140,8 @@ rename_assets_page.rename_button_click()
 ### Dépendances
 - `tkinter` (GUI)
 - `lxml` (XML parsing)
-- `PIL/Pillow` (images preview, optionnel)
+- `PIL/Pillow` (images preview)
+- `tkshared` (package partagé via submodule)
 
 ### Conventions
 - Pas de style/script inline
@@ -141,7 +154,7 @@ rename_assets_page.rename_button_click()
 ## 📝 TODO / AMÉLIORATIONS
 
 - [ ] Ajouter doc en en-tête des fichiers utils/ et pages/
-- [ ] Migrer NoticeLabel vers version refactorisée (_shared)
+- [x] Migration vers package Git partagé (tkshared submodule) ✅
 - [ ] Réorganiser dossiers utils/ (trop de fichiers à la racine)
 - [ ] Tests unitaires pour fonctions critiques
 

@@ -1,6 +1,18 @@
 # 📝 Changelog - SCTools
 
-## 2025-11-03
+## 2025-11-03 - Migration vers package Git partagé
+
+### 🎯 Migration tkshared (submodule Git)
+- **Création repo GitHub** `TkinterSharedUI` (https://github.com/JusteMow/tk_shared)
+  - Package renommé : `shared_tkinter_utils` → `tkshared`
+  - Structure setup.py pour installation pip
+  - Intégré comme submodule Git dans `_shared/tkshared`
+- **Mise à jour imports** dans tout le projet
+  - `from _shared.shared_tkinter_utils.xxx` → `from tkshared.xxx`
+  - 11 fichiers mis à jour (pages, utils, main)
+- **Suppression ancien dossier** `_shared/shared_tkinter_utils/`
+  - Remplacé par submodule Git
+  - Installation : `pip install -e _shared/tkshared`
 
 ### ✅ Création package réutilisable
 - **Package** `_shared/shared_tkinter_utils/`
