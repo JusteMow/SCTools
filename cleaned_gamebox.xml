@@ -1,0 +1,228 @@
+<Item itemName="ItemNotFound" meshName="interro.mesh" spriteName="" isCastShadows="true" isADuplicate="false" isOnGround="true" acceleration="0" attractionDistance="0" timeBeforeAttraction="0">
+ 		<toybox group="COMMON" parentName="ItemNotFound" screenName="ItemNotFound" thumbnail="" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="5" isRebound="false"/>
+ 		<CosSin SinSpeed="2 0 0" SinDistance="5 0 0"/>
+ 		<Gameplay itemKind="9" Score="50" energyGiven="1" weaponSlot="0" gaugeAdd="10" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="forceField01" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="item01" sfxEndName="item01" soundName="" volume="1" sound_pitch="0 0.1" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="2.5 2.5 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_2DGEOMETRY_cog" meshName="plane1U.mesh" spriteName="itemEL_cog.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="50" attractionDistance="20" timeBeforeAttraction="0">
+ 		<toybox group="2DGEOMETRYASSETS" parentName="Item_2DGEOMETRY_cog" screenName="item_cog" thumbnail="icon_item_cog" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 -10 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="5" isRebound="false"/>
+ 		<CosSin SinSpeed="4 0 0" SinDistance="10 0 0"/>
+ 		<Gameplay itemKind="3" Score="100" energyGiven="1" weaponSlot="1" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="1" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="ParticleNew_148" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="2DGEOMETRY_item" soundName="item01.mp3" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="8 8 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -1.36" point1="0 1.68" point2="-1.44444 -0.0888889" point3="1.46667 -0.0222223" point4="-0.977778 -0.977778" point5="1.02222 -0.977778" point6="1.10905 1.10905" point7="-1.10905 1.10905"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_2DGEOMETRY_heart" meshName="plane1U.mesh" spriteName="itemEL_heart.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="0" attractionDistance="0" timeBeforeAttraction="0">
+ 		<toybox group="2DGEOMETRYASSETS" parentName="Item_2DGEOMETRY_heart" screenName="item_heart" thumbnail="icon_item_heart" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="0" isRebound="false"/>
+ 		<CosSin SinSpeed="2.5 0 1.5" SinDistance="8 0 5"/>
+ 		<Gameplay itemKind="1" Score="100" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="forceField01" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="2DGEOMETRY_item" soundName="item04.mp3" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="8 8 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -0.955556" point1="0 1.62222" point2="-1.51111 -0.0888889" point3="1.64444 -0.222222" point4="-1.17778 -1.24444" point5="1.33333 -1.26667" point6="0.577778 1.31111" point7="-0.466667 1.26667"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_2DGEOMETRY_star" meshName="plane1U.mesh" spriteName="itemEL_star.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="50" attractionDistance="22" timeBeforeAttraction="0.3">
+ 		<toybox group="2DGEOMETRYASSETS" parentName="Item_2DGEOMETRY_star" screenName="item_star" thumbnail="icon_item_star" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 -10 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="17" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="2" Score="10" energyGiven="1" weaponSlot="6" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="forceField01" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="2DGEOMETRY_itemSmall" soundName="item02.mp3" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="4 4 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -2" point1="0 2" point2="-2 0" point3="2 0" point4="-0.422222 -0.466667" point5="0.755556 -0.866667" point6="0.422222 0.311111" point7="-0.511111 0.622222"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_bonus_life" meshName="plane1U.mesh" spriteName="bonus_life.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="0" attractionDistance="0" timeBeforeAttraction="0">
+ 		<toybox group="Bullethell Lite" parentName="Item_bonus_life" screenName="Item_bonus_life" thumbnail="icon_bonus_life" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="0" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="2" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12 12 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -2" point1="0 2" point2="-2 0" point3="2 0" point4="-2 -2" point5="2 -2" point6="2 2" point7="-2 2"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_bonus_points" meshName="plane1U.mesh" spriteName="bonus_points.png" isCastShadows="false" isADuplicate="false" isOnGround="false" acceleration="20" attractionDistance="34" timeBeforeAttraction="0.2">
+ 		<toybox group="Bullethell Lite" parentName="Item_bonus_points" screenName="Item_bonus_points" thumbnail="icon_bonus_points" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 10 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="20" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="7" Score="1111" energyGiven="1" weaponSlot="0" gaugeAdd="5" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="bonus_score.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12 12 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -1.74" point1="0 1.82" point2="-1.87 0" point3="1.96296 0.246914" point4="-1.36361 -1.36361" point5="1.51852 -1.07407" point6="1.16049 1.53086" point7="-1.39896 1.39896"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_bonus_points2" meshName="plane1U.mesh" spriteName="bonus_points2.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="0" attractionDistance="0" timeBeforeAttraction="0">
+ 		<toybox group="Bullethell Lite" parentName="Item_bonus_points2" screenName="Item_bonus_points2" thumbnail="icon_bonus_points2" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="0" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="2" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="6 6 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -2" point1="0 2" point2="-2 0" point3="2 0" point4="-2 -2" point5="2 -2" point6="2 2" point7="-2 2"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_bonus_power_up" meshName="plane1U.mesh" spriteName="bonus_power_up.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="50" attractionDistance="29" timeBeforeAttraction="0">
+ 		<toybox group="Bullethell Lite" parentName="Item_bonus_power_up" screenName="Item_bonus_power_up" thumbnail="icon_bonus_power_up" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 -10 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="5" isRebound="false"/>
+ 		<CosSin SinSpeed="4 0 0" SinDistance="10 0 0"/>
+ 		<Gameplay itemKind="6" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="bonus_power_up_snd.wav" volume="0.4" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12 12 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0.54321 -1.17284" point1="-0.395062 1.16049" point2="-1.14815 -0.45679" point3="1.24691 0.518518" point4="-0.444444 -1.12346" point5="1.20988 -0.45679" point6="0.432099 1.14815" point7="-1.12346 0.54321"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_bonus_super_gauge" meshName="plane1U.mesh" spriteName="bonus_super_gauge.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="0" attractionDistance="0" timeBeforeAttraction="0">
+ 		<toybox group="Bullethell Lite" parentName="Item_bonus_super_gauge" screenName="Item_bonus_super_gauge" thumbnail="icon_bonus_super_gauge" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="0" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="7" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="2000" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="6 6 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0.0246913 -1.76543" point1="0 2" point2="-1.66667 0.0987654" point3="1.85185 -0.0123457" point4="-1 -1" point5="1 -1.33333" point6="1.37037 1.07407" point7="-0.962963 1.07407"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_Dummy._HP" meshName="plane1U.mesh" spriteName="Dummy._HP.png" isCastShadows="false" isADuplicate="false" isOnGround="false" acceleration="99" attractionDistance="150" timeBeforeAttraction="0">
+ 		<toybox group="Bullethell Lite" parentName="Item_Dummy._HP" screenName="Dummy._HP" thumbnail="icon_Dummy._HP" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="0" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="0" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="4 4 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -2" point1="0 2" point2="-2 0" point3="2 0" point4="-2 -2" point5="2 -2" point6="2 2" point7="-2 2"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_item_dummy__hp" meshName="plane1U.mesh" spriteName="item_dummy__hp.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="99" attractionDistance="80" timeBeforeAttraction="0">
+ 		<toybox group="Bullethell Lite" parentName="Item_item_dummy__hp" screenName="Item_item_dummy__hp" thumbnail="icon_item_dummy__hp" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="0" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="0" Score="0" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="none" sfxEndName="none" soundName="bonus_hp.wav" volume="0.4" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="375 375 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -2" point1="0 2" point2="-2 0" point3="2 0" point4="-2 -2" point5="2 -2" point6="2 2" point7="-2 2"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_power_up_1_up" meshName="plane1U.mesh" spriteName="power_up_1_up.png" isCastShadows="false" isADuplicate="false" isOnGround="false" acceleration="40" attractionDistance="30" timeBeforeAttraction="0.1">
+ 		<toybox group="Bullethell Lite" parentName="Item_power_up_1_up" screenName="Item_power_up_1_up" thumbnail="icon_power_up_1_up" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="9" isRebound="false"/>
+ 		<CosSin SinSpeed="5 0 0" SinDistance="11 0 0"/>
+ 		<Gameplay itemKind="1" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12.5 12.5 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -1.39" point1="0 1.43" point2="-1.93 0" point3="1.92593 -0.0246913" point4="-1.49089 -1.49089" point5="1.34568 -1.38272" point6="1.33333 1.38272" point7="-1.43432 1.43432"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_power_up_bomb" meshName="plane1U.mesh" spriteName="power_up_bomb.png" isCastShadows="false" isADuplicate="false" isOnGround="false" acceleration="40" attractionDistance="30" timeBeforeAttraction="0.1">
+ 		<toybox group="Bullethell Lite" parentName="Item_power_up_bomb" screenName="Item_power_up_bomb" thumbnail="icon_power_up_bomb" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="9" isRebound="false"/>
+ 		<CosSin SinSpeed="5 0 0" SinDistance="11 0 0"/>
+ 		<Gameplay itemKind="4" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12.5 12.5 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -1.39" point1="0 1.43" point2="-1.93 0" point3="1.82716 -0.0123457" point4="-1.49089 -1.49089" point5="1.30864 -1.40741" point6="1.33333 1.39506" point7="-1.43432 1.43432"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_power_up_gauge" meshName="plane1U.mesh" spriteName="power_up_gauge.png" isCastShadows="false" isADuplicate="false" isOnGround="false" acceleration="40" attractionDistance="30" timeBeforeAttraction="0.1">
+ 		<toybox group="Bullethell Lite" parentName="Item_power_up_gauge" screenName="Item_power_up_gauge" thumbnail="icon_power_up_gauge" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="9" isRebound="false"/>
+ 		<CosSin SinSpeed="5 0 0" SinDistance="11 0 0"/>
+ 		<Gameplay itemKind="7" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="20000" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12.5 12.5 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -1.39" point1="0 1.43" point2="-1.93 0" point3="1.85185 -0.0617284" point4="-1.49089 -1.49089" point5="1.33333 -1.44444" point6="1.37037 1.30864" point7="-1.43432 1.43432"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_power_up_hp" meshName="plane1U.mesh" spriteName="power_up_hp.png" isCastShadows="false" isADuplicate="false" isOnGround="false" acceleration="40" attractionDistance="30" timeBeforeAttraction="0.1">
+ 		<toybox group="Bullethell Lite" parentName="Item_power_up_hp" screenName="Item_power_up_hp" thumbnail="icon_power_up_hp" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="9" isRebound="false"/>
+ 		<CosSin SinSpeed="5 0 0" SinDistance="11 0 0"/>
+ 		<Gameplay itemKind="0" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="ParticleNew_173" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12 12 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -1.53" point1="0 1.66" point2="-1.87 0" point3="1.91 0" point4="-1.32118 -1.32118" point5="1.36361 -1.36361" point6="1.36361 1.36361" point7="-1.32118 1.32118"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Item_power_up_points1" meshName="plane1U.mesh" spriteName="power_up_points1.png" isCastShadows="false" isADuplicate="false" isOnGround="false" acceleration="40" attractionDistance="30" timeBeforeAttraction="0">
+ 		<toybox group="Bullethell Lite" parentName="Item_power_up_points1" screenName="Item_power_up_points1" thumbnail="icon_power_up_points1" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="9" isRebound="false"/>
+ 		<CosSin SinSpeed="5 0 0" SinDistance="11 0 0"/>
+ 		<Gameplay itemKind="2" Score="10000" energyGiven="1" weaponSlot="0" gaugeAdd="1" powerUpAdd="1" multiplier="1" ForceFieldLife="5" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="basic_item01" sfxEndName="basic_item01" soundName="item.wav" volume="1" sound_pitch="0 0" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="12.5 12.5 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0.0864198 -1.67901" point1="0.0123458 1.66667" point2="-1.93 0" point3="1.71605 0.0246913" point4="-1.28395 -1.35802" point5="1.39506 -1.37037" point6="1.08642 1.41975" point7="-1.30864 1.40741"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="ItembasicItemGold" meshName="gold_big.mesh" spriteName="" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="0" attractionDistance="0" timeBeforeAttraction="0">
+ 		<toybox group="COMMON" parentName="ItembasicItemGold" screenName="00_gold" thumbnail="icon_gold_big" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="5" isRebound="false"/>
+ 		<CosSin SinSpeed="4 0 0" SinDistance="8 0 0"/>
+ 		<Gameplay itemKind="3" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="10" powerUpAdd="1" multiplier="1" ForceFieldLife="10" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="forceField01" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="" sfxEndName="" soundName="item01.mp3" volume="1" sound_pitch="0 0.1" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="4 4 0.2" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="ItembasicItemStar" meshName="plane1U.mesh" spriteName="item_starBasic.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="40" attractionDistance="0" timeBeforeAttraction="0.1">
+ 		<toybox group="COMMON" parentName="ItembasicItemStar" screenName="00_star" thumbnail="icon_item_starBasic" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="180" secondaryAngle="0" startSpeed="20" isRebound="false"/>
+ 		<CosSin SinSpeed="0 0 0" SinDistance="0 0 0"/>
+ 		<Gameplay itemKind="2" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="10" powerUpAdd="1" multiplier="1" ForceFieldLife="10" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="forceField01" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="" sfxEndName="" soundName="item01.mp3" volume="1" sound_pitch="0 0.1" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="24 16 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0 -1.77778" point1="-0.0666667 0.888889" point2="-0.333333 0" point3="0 0.2" point4="-1.84444 -0.466667" point5="1.86667 -0.533333" point6="1.17778 1.6" point7="-1.15556 1.62222"> 	</OBB>
+
+	</Item>
+
+	<Item itemName="Itemstar_vector" meshName="plane1U.mesh" spriteName="itemStar_vector.png" isCastShadows="false" isADuplicate="false" isOnGround="true" acceleration="99" attractionDistance="600" timeBeforeAttraction="0">
+ 		<toybox group="COMMON" parentName="Itemstar_vector" screenName="00_star_vector" thumbnail="icon_ItemStar_vector" layer="0"/>
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0"/>
+ 		<ANIMATION rotation="0 0 0" secondaryDirectionType="0" startAngle="0" secondaryAngle="0" startSpeed="5" isRebound="false"/>
+ 		<CosSin SinSpeed="4 0 0" SinDistance="8 0 0"/>
+ 		<Gameplay itemKind="6" Score="10" energyGiven="1" weaponSlot="0" gaugeAdd="10" powerUpAdd="3" multiplier="1" ForceFieldLife="10" ForceFieldDuration="10" isLifeDuration="false" lifeDuration="5" ForceFieldSFX="forceField01" ForceFielduseLife="true"/>
+ 		<SFX sfxStartName="" sfxEndName="" soundName="item01.mp3" volume="0.5" sound_pitch="0 0.1" ForceFieldEndSound="" ForceFieldEndSoundVolume="1"/>
+ 
+ 		<OBB size="24 16 0" rotation="0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0="0.0222223 -1.82222" point1="0.155555 0.711111" point2="-0.555556 0.133333" point3="0.155555 0.0222223" point4="-1.8 -0.555556" point5="1.66667 -0.533333" point6="1 1.64444" point7="-1.11111 1.68889"> 	</OBB>
+
+	</Item>
+

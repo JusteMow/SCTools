@@ -1,0 +1,414 @@
+Voici la gamebox suivante: 
+
+localisation : (root)\gamebox\gamebox.background
+
+nom de la nouvelle fonction : def rename_asset_in_gamebox_background(root_path, old_name, new_name):
+
+Il faut aussi ajouter la balise root avant l'édition 
+
+La propritété que l'on doit comparer à old_name pour chaque élément : spriteName
+
+Les propriétés à modifier : 
+name // prend le nom sans l'extension et ajoute le préfixe "bg_"
+spriteName // prend le nom avac l'extension et sans préfixe
+parentName //prend le nom sans l'extension et ajoute le préfixe "bg_"
+screenName // prend le nom sans l'extension et et sans préfixe
+thumbnail //  prend le nom sans l'extensionet et ajoute le préfixe "icon_"
+
+Il faut également retirer la balise root avant l'enregistrement. 
+
+Modifictation de la fonction rename_asset: 
+
+condition pour appeler la nouvelle fonction rename_asset_in_gamebox_background : 
+si le old_path contient "Assets\Models\Backgrounds\Sprites"
+
+
+Pour gagner du temps tu peux traiter seulement notre nouvelle fonction rename_asset_in_gamebox_background et la fonction rename_asset
+
+je vois juste une modif à faire pour l'instant : 
+Après ces 2 lignes: 
+    file_path = os.path.join(root_path, "gamebox", "gamebox.background")
+    new_name_wo_extension = os.path.splitext(new_name)[0]
+peux tu ajouter 
+new_name_w_bg_prefix = nouveau nom avec le préfix bg_ devant
+et 
+new_name_w_icon_prefix = nouveau nom avec le préfix icon_ devant 
+Ils devront ensuite être utilisé pour 
+name // new_name_w_bg_prefix
+spriteName // new_name
+parentName // new_name_w_bg_prefix
+screenName // new_name_wo_extension
+thumbnail //  new_name_w_icon_prefix
+
+
+
+
+Et donc, c'est parti pour le dernier gros morceau. 
+Dans le dossier (root)\levels\
+il faut prendre tous les fichiers qui n'ont pas un _back dans le nom. 
+
+et pour chaque level, 
+if 
+if "Assets\\Sounds\\" in old_path then rename_asset_in_level_sound:
+if "Assets\\Models\\Enemies\\Sprites" in old_path  then rename_asset_in_level_waves
+if "Assets\\Models\\Players\\Sprites" in old_path then rename_asset_in_levels_player
+if "Assets\\Pictures" in old_path" in old_path then rename_asset_in_level_pictures
+if "Assets\\Models\\Items\\Sprites" in old_path: then rename_asset_in_level_item:
+if "Assets\\Models\\Backgrounds\\Sprites" in old_path then rename_asset_in_level_background
+
+#handles background sprites in level
+fonction rename_asset_in_level_background:
+
+initialiser le root
+initialiser new_name_w_bg_prefix = new_Name sans extension avec le préfixe bg_
+
+pour tous les 
+shmup.BG 
+if shmup.BG.spriteName == old_Name then {
+- shmup.BG.spriteName = new_Name
+- shmup.BG.toybox.parentName = new_name_w_bg_prefix
+- si (overwrite_screenName) then shmup.BG.toybox.screenName = new_Name_wo_extension
+
+#handles enemies sprites in levels
+fonction rename_asset_in_level_waves:
+
+initialiser le root
+initialiser new_name_w_Wave_extension = new_Name sans extension et avec le préfixe Wave_
+
+if shmup.enemy.spriteName == old_Name then{
+- shmup.enemy.spriteName = new_Name
+- shmup.enemy.toybox.parentName = new_name_w_Wave_extension
+- if (replaceScreeName ) then shmup.enemy.toybox.screenName = new_Name_wo_extension
+
+#handles items in levels
+fonction rename_asset_in_level_item:
+
+initialiser le root
+
+pour tous les shmup.enemy.ITEMS
+if shmup.enemy.ITEMS.itemSpawned == old_Name_wo_extension then shmup.enemy.ITEMS.itemSpawned == new_Name_wo_extension
+
+if shmup.item.spriteName == old_Name then 
+- shmup.item.spriteName == new_Name
+- item.toybox.parentName = new_name_w_Item_prefix
+- if (overwrite_screenName) then item.toybox.screenName = new_Name_wo_extension
+
+#handles pictures in level
+fonction rename_asset_in_level_pictures:
+
+initialiser le root
+
+shmup.Level.editorCam..Background.backgroundText1Name
+shmup.Level.editorCam..Background.backgroundText2Name
+shmup.Level.editorCam..Background.backgroundText3Name
+shmup.Level.editorCam..Background.backgroundText4Name
+shmup.Level.editorCam..Background.backgroundText5Name
+shmup.Level.editorCam..Background.backgroundText6Name
+
+#handles Player sprite in level
+fonction rename_asset_in_levels_player:
+
+initialiser new_name_w_Player_prefix = new_Name sans extension et avec le prefix Player_
+
+if shmup.player.spriteName == old_Name then {
+- shmup.player.spriteName = new_Name
+- shmup.player.toybox.parentName = new_name_w_Player_prefix
+
+#handles Sounds in level
+fonction rename_asset_in_level_sound:
+
+là on y va en bourrin : replace old_name by new_Name;
+
+
+
+Pour chaque fonction, il nous faudra le DEBUG habituel 
+J'aimerais aussi ajouter un fichier log de toutes les modifications apportées aux fichiers. 
+le fichier log sera (roo)\asset_Renamer.log, (s'il n'existe pas il faudra le créer)
+On stockera chaque modification dans une string sous la forme: 
+" YYMMDD HH:MM " - " non du fichier édité (sans le path) " - " ligne éditée (si accessible en XML) " - " propriété éditée " - old " ancienne valeur " - new : " nouvelle valeur. 
+et on ajoutera la nouvelle ligne à la 1ere ligne. 
+
+
+
+
+
+
+
+
+
+
+
+voici la structure des éléments:
+	<enemy waveName = "Wave_0Dummy_NOYHING" meshName = "" spriteName = "0Dummy_NOYHING.png" isCastShadows = "false" isHiddenEnemy = "false" type = "basic" waveCategory = "0" isAsteroid = "false"  AItype = "AI_WAYPOINTS" isADuplicate = "false" >
+ 		<toybox group = "Bullethell Lite" parentName = "Wave_0Dummy_NOYHING" screenName = "KillPathB_IfTimeExceeds" thumbnail = "iconW_0Dummy_NOYHING" layer = "0" queuePriority = "0" />
+		<Spawner spawnType = "0" numberOfSpawns = "1" timeBetweenSpawns = "0.2" radius = "60 60" TimeBeforeSpawn = "0" planeNbs = "1 1" isGround = "true" offset = "0" startAngle = "0" endAngle = "360" OrientationType = "0" isHiddenWhenSleeping = "true" startSfxName = "" isKeepFormation="false" />
+ 		<position pos="0 0 0" sca="1 1 1" orient="0 0 -1 0" waveOrient="0 0 -1 0" symmetry="1" />
+ 		<Snake isSnake = "false" snakeNumber = "10" snakeDistance = "5" isSnakeBodyInvincible = "false" isSnakeHeadInvincible = "false" isSnakeTailInvincible = "false" />
+ 		<Collisions isCollideWPlayer = "true" isCollideWBullets = "true" isCollideWEnemyBullets = "false" />
+ 		<CosAnimation AnimRot = "0 0 0" sinSpeed = "2 2 2" sindistance = "0 0 0" />
+ 		<WP WP_GlobalSpeedMult = "1" />
+		<GAMEPLAY life = "10000000" category = "0" score = "0" scoreWhenHit = "0" damage = "1" killChildren = "false" killedBehavior = "1" isDeathCancelsBullets = "false" isBigLifebar = "false" startInvincibility = "0.2" isDontFireIfNearPlayer = "false" dontFireRadius = "0.5" />
+		<ITEMS itemSpawned = "" itemNumber = "1" itemRadius = "0" itemRandom = "0.5" isEachCopiesSpawnItem = "false" />
+		<Death explosionName = "" explosionScale = "1" explosionNumber = "1" explosionRadius = "0" destructionTime = "0" deathTranslation = "0 0 0" deathRotation = "0 0 0" isDeathCancelBullets = "false" cancelBulletItemName = "" />
+		<SOUND startSoundName = "" isStartSoundLooping = "false" startSoundVolume = "1" />
+
+
+ 		<WEAPONSET name = "New Set 5" >
+ 		</WEAPONSET>
+ 		<WEAPONSET name = "New Set 3" >
+ 			<weapon>
+				<name Name = "Weapon" ScreenName = "test6_solar2" />
+				<toybox group = "COMMON" parentName = "WeaponGEO_91" thumbnail = "" />
+				<battery offset = "0 0 2" isAttachedToCamera = "false" isSubWeapon = "false" rotation = "0 -0 1 0" shoot_distance = "0" shoot_startDistance = "0" button = "0" />
+ 			</weapon>
+ 			<weapon>
+				<name Name = "Weapon" ScreenName = "test6_solar2 Black" />
+				<toybox group = "COMMON" parentName = "WeaponGEO_92" thumbnail = "" />
+				<battery offset = "0 0 2" isAttachedToCamera = "false" isSubWeapon = "false" rotation = "0 -0 1 0" shoot_distance = "10" shoot_startDistance = "0" button = "0" />
+ 			</weapon>
+ 		</WEAPONSET>
+ 		<WEAPONSET name = "New Set 2" >
+ 			<weapon>
+				<name Name = "Weapon" ScreenName = "test_test" />
+				<toybox group = "COMMON" parentName = "WeaponGEO_90" thumbnail = "" />
+				<battery offset = "0 0 0" isAttachedToCamera = "false" isSubWeapon = "false" rotation = "0 -0 1 0" shoot_distance = "0" shoot_startDistance = "0" button = "0" />
+ 			</weapon>
+ 		</WEAPONSET>
+ 		<WEAPONSET name = "New Set 1" >
+ 			<weapon>
+				<name Name = "Weapon" ScreenName = "test6_solar1" />
+				<toybox group = "COMMON" parentName = "WeaponGEO_88" thumbnail = "" />
+				<battery offset = "0 0 0" isAttachedToCamera = "true" isSubWeapon = "false" rotation = "0 -0 1 0" shoot_distance = "0" shoot_startDistance = "0" button = "0" />
+ 			</weapon>
+ 			<weapon>
+				<name Name = "Weapon" ScreenName = "test6_solar1 black" />
+				<toybox group = "COMMON" parentName = "WeaponGEO_89" thumbnail = "" />
+				<battery offset = "0 0 0" isAttachedToCamera = "true" isSubWeapon = "false" rotation = "0 -0 1 0" shoot_distance = "0" shoot_startDistance = "0" button = "0" />
+ 			</weapon>
+ 		</WEAPONSET>
+ 		<WEAPONSET name = "New Set 4" >
+ 			<weapon>
+				<name Name = "Weapon" ScreenName = "test6_solar5" />
+				<toybox group = "COMMON" parentName = "WeaponGEO_95" thumbnail = "" />
+				<battery offset = "0 0 0" isAttachedToCamera = "false" isSubWeapon = "false" rotation = "0 -0 1 0" shoot_distance = "10" shoot_startDistance = "0" button = "0" />
+ 			</weapon>
+ 			<weapon>
+				<name Name = "Weapon" ScreenName = "test6_solar5-Black" />
+				<toybox group = "COMMON" parentName = "WeaponGEO_96" thumbnail = "" />
+				<battery offset = "0 0 0" isAttachedToCamera = "false" isSubWeapon = "false" rotation = "0 -0 1 0" shoot_distance = "10" shoot_startDistance = "0" button = "0" />
+ 			</weapon>
+ 		</WEAPONSET>
+	</enemy>
+	
+Ca ressemble à la structure de la gamebox players. 
+
+
+donc plusieurs fonctions : 
+
+nom de la 1ere nouvelle fonction : 
+rename_asset_in_gamebox_waves_sprites
+
+Comme d'hab, il faut ajouter le root, 
+
+if enemy.spriteName.name == old_Name 
+then { 
+	enemy.spriteName = new_Name;  
+	enemy.waveName = new_Name_wo_extension; 
+	enemy.toybox.parentName = new_Name_wo_extension;
+	enemy.toybox.screenName = new_Name_wo_extension;
+	enemy.toybox.thumbnail = new_name_w_icon_prefix;
+	}
+	
+la suivante est très simple: 
+
+localisation : (root)\gamebox\gamebox.waypoints
+
+structure: 
+<WPS name = "PATHPRESSET_10" ScreenName = "TMP4" group = "Bullethell Lite" WP_GlobalSpeedMult = "1" >
+ 			<waypoint speed = "10" >
+ 				<position pos="0 0 0" Tension = "0.5" />
+ 				<rotation rot="0 0 0" rotType = "0" RotAimSpeed = "0.3" rotAngleLimit = "360" />
+				<behaviors wait = "0" loop = "false" isChangeWeaponSet = "true" weaponSetShoot = "-1" soundName = "" soundVolume = "0.7" soundPitch = "0 0.1" />
+			</waypoint>
+
+ 			<waypoint speed = "1.5" >
+ 				<position pos="-0.101864 0 -70.1599" Tension = "0.5" />
+ 				<rotation rot="0 0 0" rotType = "0" RotAimSpeed = "0.3" rotAngleLimit = "360" />
+				<behaviors wait = "0" loop = "false" isChangeWeaponSet = "true" weaponSetShoot = "0" soundName = "" soundVolume = "0.7" soundPitch = "0 0.1" />
+			</waypoint>
+
+ 			<waypoint speed = "1.4" >
+ 				<position pos="-4.76837e-07 0 -201.608" Tension = "0.5" />
+ 				<rotation rot="0 0 0" rotType = "0" RotAimSpeed = "0.3" rotAngleLimit = "360" />
+				<behaviors wait = "0" loop = "false" isChangeWeaponSet = "false" weaponSetShoot = "0" soundName = "" soundVolume = "0.7" soundPitch = "0 0.1" />
+			</waypoint>
+
+</WPS>
+
+rename_asset_in_gamebox_waves_waypoints:
+
+Comme d'hab, il faut ajouter le root, 
+
+if waypoint.behaviors.soundName == old_Name 
+then  aypoint.behaviors.soundName = new_name
+
+
+celle là aussi est simple :) 
+
+
+
+localisation : (root)\gamebox\gamebox.weapons
+
+voici la structure des éléments:
+
+ 			<weapon>
+				<name Name = "WeaponBasic_14" ScreenName = "Lvl2_b2_Gatling2" />
+				<toybox group = "Bullethell Lite" parentName = "WeaponBasic_14" thumbnail = "none" />
+				<battery offset = "0 0 0" isAttachedToCamera = "true" isSubWeapon = "false" rotation = "1 0 0 0" shoot_distance = "0" shoot_startDistance = "0" button = "0" />
+ 				<AI waitBeforeShoot = "1.9" shootDuration = "0.99" waitBeforeLoop = "0" isAiLooping = "true" isChargedShot = "false" blockRotationWhenShooting = "true" isWaitingForTarget = "false" isButtonCoolDown = "false" />
+ 				<Gameplay weaponCategory = "0" isLaser = "false" isAutoShoot = "false" TimeBetweenSalves = "0.45" waitBeforeShootRandomMin = "0" waitBeforeShootRandomMax = "1" isWaitBeforeShootRandom = "false" NumberOfShoots = "20" TimeBetweenShoots = "0.03" isWarmUp = "false" HotTimer = "0" hotTimerSfx = "energy_charge" chargeSfxReadyName = "" damage = "1" timeToLive = "50" isDestructible = "false" isCancellable = "true" timeInvisibleIndividual = "999" HP = "1" score = "0" isInvincible = "false" cancelling = "" isUseSafeZone = "true" isPlayerUsingAI = "false" />
+				<apparence meshName = "Bullet-Rotation-FluoRed" sfxType = "" impactSfxName = "ParticleNew_36" trailMaterial = "missileTrail" sfxFireName = "ParticleNew_29" sfxSmokeName = "" bulletScale = "0.5" />
+				<angles angleAdd = "0" angleRandom = "3" offsetAdd = "0 0" dirType = "0" isInFront = "false" offsetXRandom = "1" offsetYRandom = "0.5" isBurstSymetry = "false" aimLimit_angle = "360" />
+				<speeds speed = "80" startLaserSpeed = "100" speedRandom = "7" speedAdd = "0" />
+				<acceleration1 acceleration = "10" acceleration1StartTime = "0" accelerationDuration = "0.2" isChangeSpeed1 = "false" />
+				<acceleration2 acceleration2 = "10" acceleration2StartTime = "0" accelerationDuration2 = "0.2" isChangeSpeed2 = "false" />
+				<changeDirection changeDirectionType = "0" changeDirectionStartTime = "0" changeDirectionDuration = "0" aimSpeed = "0" changeDirectionAngle = "0" />
+				<WeaponAnim WeaAnimRotAngle = "0" WeaAnimRotSpeed = "0" WeaAnimRotPing = "true" WeaAnimRotMiddle = "true" />
+				<repeater repeater_angle = "360" repeater_number = "1" />
+				<Sound shot = "Bullet-Fire-FastHigh1.wav" shotSound_Volume = "0.3" impactSoundName = "Bullet-Hit-Mid2.wav" impactSound_Volume = "0.0999999" chargeSoundName = "" chargeSoundReadyName = "" chargeSoundReady_Volume = "1" shotSound_pitch = "-0.08 0.2" impactSound_pitch = "0 0.1" chargeSound_pitch = "0 0.1" chargeSoundReady_pitch = "0 0.1" warmUpSound_Volume = "1" />
+ 			</weapon>
+
+2 nouvelles fonctions 
+- la 1ere s'appellera rename_asset_in_gamebox_weapons_sprites
+
+il faudra ajouter le <root>
+
+trig : old_Name ==  player.spriteName 
+
+il faudra initialiser le 
+- new_name_wo_extension = new_name sans extension. 
+- et cette fois le old_Name_wo_extension = old_Name sans l'extension
+
+if weapon.apparence.meshName = old_Name_wo_extension 
+then weapon.apparence.meshName = new_Name_wo_extension
+
+la 2e s'appellera rename_asset_in_gamebox_weapons_sounds
+il faudra ajouter le <root>
+
+if weapon.Sound.shot == old_Name then weapon.Sound.shot = new_Name
+if weapon.Sound.impactSoundName == old_Name then weapon.Sound.impactSoundName = new_Name
+if weapon.Sound.chargeSoundName == old_Name then weapon.Sound.chargeSoundName = new_Name
+<if weapon.Sound.chargeSoundReadyName == old_Name then weapon.Sound.chargeSoundReadyName = new_Name
+
+
+
+
+modifier :
+- player.playerName = new_name_wo_extension
+- player.spriteName = new_name
+- player.toybox.parentName = new_name_wo_extension
+- player.toybox.screenName = new_name_wo_extension
+- player.toybox.thumbnail = new_name_w_icon_prefix
+
+
+
+rename_asset_in_gamebox_players_Sounds
+
+il faudra ajouter le <root>
+
+if player.gameplay.collisionSound == old_Name 
+then modifier player.gameplay.collisionSound = new_name
+
+if player.gameplay.collisionBulletsSound == old_Name 
+then modifier player.gameplay.collisionBulletsSound = new_name
+
+
+le trig : regarder l'attribut name, et si old_Name == name. 
+
+les propriétés à modifier: 
+name = new_name
+screenName = new_name_wo_extension
+
+Et les modification à ajouter à la fonction rename_asset
+if old_path contains : Assets\Models\Backgrounds\Sprites
+
+nouvelle idée : on va rajouter un bool dans certaines fonctions qui permet de choisir ou non si on remplace systématiquement screenName)
+
+nom de la nouvelle fonction : def rename_asset_in_gamebox_items(root_path, old_name, new_name, overwrite_screenName):
+
+Voici la structure d'un élément: 
+	<Item itemName = "Item_Bonus-Points" meshName = "plane1U.mesh" spriteName = "Bonus-Points.png" isCastShadows = "false" isADuplicate = "false" isOnGround = "false" acceleration = "20" attractionDistance = "34" timeBeforeAttraction = "0.2" >
+ 		<toybox group = "Bullethell Lite" parentName = "Item_Bonus-Points" screenName = "Bonus-Points" thumbnail = "icon_Bonus-Points" layer = "0" />
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0" />
+ 		<ANIMATION rotation = "0 10 0" secondaryDirectionType = "0" startAngle = "0" secondaryAngle = "0" startSpeed = "20" isRebound = "false" />
+ 		<CosSin SinSpeed = "0 0 0" SinDistance = "0 0 0" />
+ 		<Gameplay itemKind = "7" Score = "1111" energyGiven = "1" weaponSlot = "0" gaugeAdd = "5" powerUpAdd = "1" multiplier = "1" ForceFieldLife = "5" ForceFieldDuration = "10" ForceFielduseLife = "true" isLifeDuration = "false" lifeDuration = "5" ForceFieldSFX = "" ForceFielduseLife = "true" />
+ 		<SFX sfxStartName = "basic_item01" sfxEndName = "basic_item01" soundName = "Bonus-Score.wav" volume = "1" sound_pitch = "0 0" ForceFieldEndSound = "" ForceFieldEndSoundVolume = "1" />
+ 
+ 		<OBB size = "12 12 0" rotation = "0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0" point0 = "0 -1.74" point1 = "0 1.82" point2 = "-1.87 0" point3 = "1.96296 0.246914" point4 = "-1.36361 -1.36361" point5 = "1.51852 -1.07407" point6 = "1.16049 1.53086" point7 = "-1.39896 1.39896"  > 	</OBB>
+
+	</Item>
+
+
+Il faut aussi ajouter la balise root avant l'édition 
+
+2 éléments à comparer à old_name : 
+
+le 1er : spriteName
+
+Si spritename == old_name : 
+
+on va initialiser 
+- new_name_wo_extension = new_name sans extension. 
+- new_name_w_Item_prefix = le préfiexe "Item_ " + new_name_wo_extension 
+- new_name_w_icon_prefix = le préfixe "icon_"+ new_name_wo_extension
+
+Les propriétés à modifier. 
+spritename = new_name // n'est pas situé dans un sous élément 
+parent_name = new_name_w_Item_prefix // se trouve dans le sous élément toybox
+if (overwrite_screenName) then screenName = new_name_w_Item_prefix // se trouve dans le sous élément toybox
+thumbnail = new_name_w_icon_prefix // se trouve dans le sous élément toybox 
+
+le 2e est situé dans le sous élément <SFX> et s'appelle soundName
+Si soundName == old_name alors soundName = new_name
+
+Peux tu pour l'instant écrire seulement la fonction rename_asset_in_gamebox_items, sur le modèle des précédentes ?
+
+Et donc la modification dans la fonction rename_asset
+la condition est que le file_path contienne "Assets\Sounds\SoundFX" ou "Assets\Models\Items\Sprites"
+Pour le bool screenName je vais simplement l'initialiser dans la classe, sur true, on s'en occupera plus tard. 
+Peux tu réécrire la fonction rename_asset (en repartant de la version précédente)
+
+
+Ici il y a 2 propritétés que l'on doit comparer à old_name pour chaque élément : soundName et texturename
+
+Il y a une subtilité : soundName et texturename ne sont pas visibles dans l'élément mais dans un sous élément
+
+Voici la structure d'un élément: 
+	<Item itemName = "ItemNotFound" meshName = "interro.mesh" spriteName = "" isCastShadows = "true" isADuplicate = "false" isOnGround = "true" acceleration = "0" attractionDistance = "0" timeBeforeAttraction = "0" >
+ 		<toybox group = "COMMON" parentName = "ItemNotFound" screenName = "ItemNotFound" thumbnail = "" layer = "0" />
+		<position pos="1 1 1" orient="1 0 0 0" scale="1 1 1" meshOrient="-1 0 0 0" />
+ 		<ANIMATION rotation = "0 0 0" secondaryDirectionType = "0" startAngle = "0" secondaryAngle = "0" startSpeed = "5" isRebound = "false" />
+ 		<CosSin SinSpeed = "2 0 0" SinDistance = "5 0 0" />
+ 		<Gameplay itemKind = "9" Score = "50" energyGiven = "1" weaponSlot = "0" gaugeAdd = "10" powerUpAdd = "1" multiplier = "1" ForceFieldLife = "5" ForceFieldDuration = "10" ForceFielduseLife = "true" isLifeDuration = "false" lifeDuration = "5" ForceFieldSFX = "forceField01" ForceFielduseLife = "true" />
+ 		<SFX sfxStartName = "item01" sfxEndName = "item01" soundName = "" volume = "1" sound_pitch = "0 0.1" ForceFieldEndSound = "" ForceFieldEndSoundVolume = "1" />
+ 
+ 		<OBB size = "2.5 2.5 0" rotation = "0 0 0" isInvicible="false" isCamLimits="true" isHitBox="false" isCollideWithEnemies="true" isCollideWithBackgrounds="true" isCollideWithItems="true" offs="0 0 0"  > 	</OBB>
+
+	</Item>
+
+Comme tu peux voir, si on cherche la propriété soundName ou textureName dans l'élement, on ne la trouvera pas.
+Il faut pour chaque élément explorer tous les sous éléments <EXPL> qui contiennent la propriété soundName ou textureName. 
+
+Et ensuite comparer old_name et soundName. Si c'est égal alors soundName prend le nom avec extension.
+Ensuite comparer old_name et textureName. Si c'est égal alors textureName prend le nom avec extension.
+
+Il faut également retirer la balise root avant l'enregistrement. 
+
+Modifictation de la fonction rename_asset: 
+
+condition pour appeler la nouvelle fonction rename_asset_in_gamebox_explosion : 
+si le old_path contient "Assets\Sounds\SoundFX" ou "Assets\Particles"
+
+
+soundName

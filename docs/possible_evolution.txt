@@ -1,0 +1,10 @@
+pour intégrer les éléments 3D il faudra revoir les méthodes de détection pour les renommage. 
+Ne pas comparer le sprite name mais le nom d'objet, généralement dans un élément, le 1er nom. 
+
+Concernés 
+
+Non concernés: 
+bullets : c'était déjà la seule méthode pour les retrouver dans weapons. Vu qu'il n'y a pas de bullet 3d, pas d'ambiguités. 
+sfx : à priori pas d'autres nom lié ausx assets que les noms de sprite. 
+materiasls3D : nom de fichiers uniquement. 
+
